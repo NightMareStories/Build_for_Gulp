@@ -1,3 +1,6 @@
+# Attention!!! I'm working on a new version of the Gulp build that will be completely modularized according to ES6. This documentation is not relevant for the new version and will be updated in the near future!!!
+&nbsp;
+
 # Hello!
 &nbsp;
 
@@ -36,8 +39,7 @@ gulp
 ---
 ### "Gulp" is a multifunctional program for automatically performing frequently used tasks, in other words, it is a project builder, but its functionality can be broader than this definition, and it can be used to perform various tasks. "Gulp" is very popular among developers, and thanks to its simple and intuitive configuration, even newcomers to the "IT" industry use it. "Gulp" has detailed documentation for the various modules and functions for working with it.
 
-### I put together my "Gulp" build from various modules and functions aimed at front-end development. It contains: minimizing and optimizing "js" files, converting the work of the "Sass" and "SCSS" preprocessor to the usual "CSS" format, compressing and converting images, working with fonts, modular division of "HTML" files into components, and also, adding "CSS" prefixes, working with "SVG" images, converting "js" files to older versions for compatibility, collecting all script files into one and other useful functions
-
+### I put together my "Gulp" build from various modules and functions aimed at front-end development. It contains: minimizing and optimizing "js" files, converting the work of the "Sass" and "SCSS" preprocessor to the usual "CSS" format, compressing and converting images, working with fonts, modular division of "HTML" files into components, and also, adding "CSS" prefixes, working with "SVG" images, converting "js" files to older versions for compatibility, collecting all script files into one and other useful functions.
 ---
 &nbsp;
 
