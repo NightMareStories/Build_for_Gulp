@@ -1,6 +1,6 @@
 {
   "name": "build-for-gulp",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "description": "This is my build for the Gulp project builder that I constantly work with, using it for my projects",
   "main": "gulpfile.js",
   "type": "module",
@@ -34,6 +34,9 @@
   "devDependencies": {
     "del": "^7.1.0",
     "gulp": "^5.0.0",
-    "gulp-file-include": "^2.3.0"
+    "gulp-file-include": "^2.3.0",
+    "gulp-replace": "^1.1.4",
+    "gulp-version-number": "^0.2.4",
+    "gulp-webp-html-nosvg": "^1.1.1"
   }
 }
