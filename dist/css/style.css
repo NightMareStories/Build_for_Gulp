@@ -1,0 +1,22 @@
+.no-webp body {
+  background: url("../img/logo-img.png") 0 0 no-repeat; }
+
+body {
+  background-color: #000;
+}
+
+body span {
+  color: red;
+}
+
+@media (max-width: 768px) {
+  span {
+    font-size: 20px;
+  }
+
+  body {
+    background-color: green;
+  }
+}
+
+.webp body { background: url(../img/logo-img.webp) 0 0 no-repeat; }
