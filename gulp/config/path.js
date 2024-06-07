@@ -7,17 +7,20 @@ const srcFolder = `./src`;
 
 export const path = {
     build: {
+        js: `${buildFolder}/js/`,
         css: `${buildFolder}/css/`,
         html: `${buildFolder}/`,
         files: `${buildFolder}/files/`
     },
     src: {
+        js: `${srcFolder}/js/app.js`,
         scss: `${srcFolder}/scss/style.scss`,
         //html: `${srcFolder}/*.pug`,   // Для работы с PUG раскомментировать эту строку
         html: `${srcFolder}/*.html`,    // И закомментировать эту
         files: `${srcFolder}/files/**/*.*`,
     },
     watch: {
+        js: `${srcFolder}/js/**/*.js`,
         scss: `${srcFolder}/scss/**/*.scss`,
         //html: `${srcFolder}/**/*.pug`,   // Для работы с PUG раскомментировать эту строку
         html: `${srcFolder}/**/*.html`,    // И закомментировать эту
