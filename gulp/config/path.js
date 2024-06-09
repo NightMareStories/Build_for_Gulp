@@ -10,6 +10,7 @@ export const path = {
         js: `${buildFolder}/js/`,
         css: `${buildFolder}/css/`,
         html: `${buildFolder}/`,
+        images: `${buildFolder}/img/`,
         files: `${buildFolder}/files/`
     },
     src: {
@@ -17,6 +18,8 @@ export const path = {
         scss: `${srcFolder}/scss/style.scss`,
         //html: `${srcFolder}/*.pug`,   // Для работы с PUG раскомментировать эту строку
         html: `${srcFolder}/*.html`,    // И закомментировать эту
+        images: `${srcFolder}/img/**/*.{jpg,jpeg,png,gif,webp}`,
+        svg: `${srcFolder}/img/**/*.svg`,
         files: `${srcFolder}/files/**/*.*`,
     },
     watch: {
@@ -24,6 +27,7 @@ export const path = {
         scss: `${srcFolder}/scss/**/*.scss`,
         //html: `${srcFolder}/**/*.pug`,   // Для работы с PUG раскомментировать эту строку
         html: `${srcFolder}/**/*.html`,    // И закомментировать эту
+        images: `${srcFolder}/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}`,
         files: `${srcFolder}/files/**/*.*`
     },
     clean: buildFolder,
