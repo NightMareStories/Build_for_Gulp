@@ -1,11 +1,30 @@
+@font-face {
+  font-family: Roboto-Bold;
+  font-display: swap;
+  src: url("../fonts/Roboto-Bold.woff2") format("woff2"), url("../fonts/Roboto-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Roboto-Medium;
+  font-display: swap;
+  src: url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+
 .no-webp body {
-  background: url("../img/logo-img.png") 0 0 no-repeat; }
+  background: url("../img/background-img.jpg") 0 0 no-repeat; }
 
 body {
-  background-color: #000;
+  font-family: Roboto-Bold;
+  color: white;
+  background-color: cornsilk;
 }
 
 body span {
+  font-family: Roboto-Medium;
   color: red;
 }
 
@@ -19,4 +38,4 @@ body span {
   }
 }
 
-.webp body { background: url(../img/logo-img.webp) 0 0 no-repeat; }
+.webp body { background: url(../img/background-img.webp) 0 0 no-repeat; }

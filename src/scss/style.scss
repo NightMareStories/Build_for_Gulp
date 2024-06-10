@@ -1,9 +1,14 @@
+@import "fonts";
+
 body {
-    background-color: #000;
+    font-family: Roboto-Bold;
+    color: white;
+    background-color: cornsilk;
     span {
+        font-family: Roboto-Medium;
         color: red;
     }
-    background: url("@img/logo-img.png") 0 0 no-repeat;
+    background: url("@img/background-img.jpg") 0 0 no-repeat;
 }
 
 @media (max-width: 768px) {
