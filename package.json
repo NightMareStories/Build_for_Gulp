@@ -1,6 +1,6 @@
 {
   "name": "build-for-gulp",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "description": "This is my build for the Gulp project builder that I constantly work with, using it for my projects",
   "main": "gulpfile.js",
   "type": "module",
@@ -34,7 +34,7 @@
   "devDependencies": {
     "browser-sync": "^3.0.2",
     "del": "^7.1.0",
-    "gulp": "^5.0.0",
+    "gulp": "^4.0.2",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-clean-css": "^4.3.0",
     "gulp-file-include": "^2.3.0",

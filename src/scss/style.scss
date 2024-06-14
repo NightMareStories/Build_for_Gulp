@@ -1,11 +1,11 @@
 @import "fonts";
 
 body {
-    font-family: Roboto-Bold;
+    font-family: Montserrat-Italic;
     color: white;
     background-color: cornsilk;
     span {
-        font-family: Roboto-Medium;
+        font-family: ALBELIA;
         color: red;
     }
     background: url("@img/background-img.jpg") 0 0 no-repeat;
@@ -13,6 +13,7 @@ body {
 
 @media (max-width: 768px) {
     span {
+        font-family: Play-Bold;
         font-size: 20px;
     }
 }

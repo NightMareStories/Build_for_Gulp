@@ -40,4 +40,3 @@ const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 
 // Выполнение сценария по умолчанию
 gulp.task('default', dev);
-
