@@ -18,9 +18,13 @@ export const html = () => {
             // Показывать в терминале какой файл обработан
             verbose: true
          })) */
-        .pipe(app.plugins.replace(/@img\//g, '../img/'))
-        .pipe(webpHtmlNosvg())
-        .pipe(
+        .pipe(app.plugins.replace(/@img\//g, 'img/'))
+        .pipe(app.plugins.if(
+            app.isBuild,
+            webpHtmlNosvg()
+        ))
+        .pipe(app.plugins.if(
+            app.isBuild,
             versionNumber({
                 'value': '%DT%',    // Выводить текущую дату и время
                 'append': {         // Вставить в конец значение
@@ -35,7 +39,7 @@ export const html = () => {
                     'file': 'gulp/version.json'
                 }
             })
-        )
+        ))
         .pipe(app.gulp.dest(app.path.build.html))
         .pipe(app.plugins.browserSync.stream());
 }

@@ -10,7 +10,7 @@ import groupCssMediaQueries from 'gulp-group-css-media-queries'; // Группи
 const sass = gulpSass(dartSass);
 
 export const scss = () => {
-    return app.gulp.src(app.path.src.scss, { sourcemaps: true })
+    return app.gulp.src(app.path.src.scss, { sourcemaps: app.isDev })
     .pipe(app.plugins.plumber(
         app.plugins.notify.onError({
             title: "SCSS",
@@ -21,18 +21,30 @@ export const scss = () => {
     .pipe(sass({
         outputStyle: 'expanded'
     }))
-    .pipe(groupCssMediaQueries())
-    .pipe(webpCss({
-        webpClass: ".webp", // Если браузер поддерживает формат webp, то добавляет класс .webp
-        noWebpClass: ".no-webp" // Если браузер не поддерживает формат webp, то добавляет класс .no-webp
-    }))
-    .pipe(autoPrefixer({
-        grid: true,
-        overrideBrowserslist: ["last 3 versions"],
-        cascade: true
-    }))
+    .pipe(app.plugins.if(
+        app.isBuild,
+        groupCssMediaQueries()
+    ))
+    .pipe(app.plugins.if(
+        app.isBuild,
+        webpCss({
+            webpClass: ".webp", // Если браузер поддерживает формат webp, то добавляет класс .webp
+            noWebpClass: ".no-webp" // Если браузер не поддерживает формат webp, то добавляет класс .no-webp
+        })
+    ))
+    .pipe(app.plugins.if(
+        app.isBuild,
+        autoPrefixer({
+            grid: true,
+            overrideBrowserslist: ["last 3 versions"],
+            cascade: true
+        })
+    ))
+    .pipe(app.plugins.if(
+        app.isBuild,
+        cleanCss()
+    ))
     .pipe(app.gulp.dest(app.path.build.css)) // Копия не сжатого файла стилей для проверки получившегося файла
-    .pipe(cleanCss())
     .pipe(rename({
         extname: ".min.css"
     }))

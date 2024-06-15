@@ -20,13 +20,6 @@
 	font-style: normal;
 }
 @font-face {
-	font-family: Montserrat-Italic;
-	font-display: swap;
-	src: url("../fonts/Montserrat-Italic.woff2") format("woff2"), url("../fonts/Montserrat-Italic.woff") format("woff");
-	font-weight: 400;
-	font-style: normal;
-}
-@font-face {
 	font-family: Roboto-Medium;
 	font-display: swap;
 	src: url("../fonts/Roboto-Medium.woff2") format("woff2"), url("../fonts/Roboto-Medium.woff") format("woff");
@@ -38,6 +31,13 @@
 	font-display: swap;
 	src: url("../fonts/UniSansHeavyCAPS.woff2") format("woff2"), url("../fonts/UniSansHeavyCAPS.woff") format("woff");
 	font-weight: 800;
+	font-style: normal;
+}
+@font-face {
+	font-family: Montserrat-Italic;
+	font-display: swap;
+	src: url("../fonts/Montserrat-Italic.woff2") format("woff2"), url("../fonts/Montserrat-Italic.woff") format("woff");
+	font-weight: 400;
 	font-style: normal;
 }
 @font-face {
