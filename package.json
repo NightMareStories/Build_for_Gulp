@@ -1,6 +1,6 @@
 {
   "name": "build-for-gulp",
-  "version": "1.8.0",
+  "version": "1.9.0",
   "description": "This is my build for the Gulp project builder that I constantly work with, using it for my projects",
   "main": "gulpfile.js",
   "type": "module",
@@ -9,6 +9,8 @@
     "update": "npm update --save-dev && npm update --save",
     "dev": "gulp",
     "build": "gulp build --build",
+    "zip": "gulp deployZIP --build",
+    "deploy": "gulp deployFTP --build",
     "svgSprive": "gulp svgSprive"
   },
   "repository": {
@@ -53,12 +55,15 @@
     "gulp-sass": "^5.1.0",
     "gulp-svg-sprite": "^2.0.3",
     "gulp-ttf2woff2": "^4.0.1",
+    "gulp-util": "^3.0.8",
     "gulp-version-number": "^0.2.4",
     "gulp-webp": "^5.0.0",
     "gulp-webp-html-nosvg": "^1.1.1",
     "gulp-webpcss": "^1.1.1",
+    "gulp-zip": "^6.0.0",
     "sass": "^1.77.4",
-    "webp-converter": "^2.2.3",
+    "vinyl-ftp": "^0.6.1",
+    "webp-converter": "2.2.3",
     "webpack": "^5.91.0",
     "webpack-stream": "^7.0.0"
   }
