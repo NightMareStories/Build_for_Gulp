@@ -1,10 +1,10 @@
-// Основной модуль
+// The main module
 import gulp from 'gulp';
-// Импорт путей
+// Importing paths
 import { path } from './gulp/config/path.js';
-// Импорт общих плагинов
+// Importing common plugins
 import { plugins } from './gulp/config/plugins.js';
-// Передаем значения в глобальную переменную
+// Passing values ​​to a global variable
 global.app = {
     isBuild: process.argv.includes('--build'),
     isDev: !process.argv.includes('--build'),
@@ -12,7 +12,7 @@ global.app = {
     gulp: gulp,
     plugins: plugins
 }
-// Импорт задач
+// Importing tasks
 import { copy } from './gulp/tasks/copy.js';
 import { reset } from './gulp/tasks/reset.js';
 import { html } from './gulp/tasks/html.js';
@@ -25,12 +25,12 @@ import { svgSprive } from './gulp/tasks/svgSprive.js';
 import { zip } from './gulp/tasks/zip.js';
 import { ftp } from './gulp/tasks/ftp.js';
 
-// Наблюдатель за изменениями в файлах
+// Watch changes in files
 function watcher() {
-    /*
-// Для автоматического обновления файлов на удалённом сервере, замените строки ниже на этот вариант кода
+/*
+// To automatically update files on a remote server, replace the lines below with this code option
     gulp.watch(path.watch.html, gulp.series(html, ftp));
-     */ 
+*/ 
     gulp.watch(path.watch.files, copy);
     gulp.watch(path.watch.html, html);
     gulp.watch(path.watch.scss, scss);
@@ -38,22 +38,22 @@ function watcher() {
     gulp.watch(path.watch.images, images);
 }
 
-// Последовательная обработка шрифтов
+// Sequential font processing
 const fonts = gulp.series(otfToTtf, ttfToWoff, fontsStyle);
 
-// Основные задачи
+// Main tasks
 const mainTasks = gulp.series(fonts, gulp.parallel(copy, html, scss, js, images));
 
-// Построение сценариев выполнения задач
+// Building task execution scenarios
 const dev = gulp.series(reset, mainTasks, gulp.parallel(watcher, server));
 const build = gulp.series(reset, mainTasks);
 const deployZIP = gulp.series(reset, mainTasks, zip);
 const deployFTP = gulp.series(reset, mainTasks, ftp);
 
-// Выполнение сценария по умолчанию
+// Executing the default script
 gulp.task('default', dev);
 
-// Экспорты задач и сценариев для отдельного запуска
+// Exports tasks and scripts for separate launch
 export { dev };
 export { build };
 export { svgSprive };

@@ -36,7 +36,7 @@ export const images = () => {
         })
     ))
     .pipe(app.gulp.dest(app.path.build.images))
-    .pipe(app.gulp.src(app.path.src.svg)) // Если не используете svg изображения, то закомментируете эту строку
-    .pipe(app.gulp.dest(app.path.build.images)) // и эту тоже, иначе получите ошибку
+    .pipe(app.gulp.src(app.path.src.svg)) // If you do not use svg images, then comment out this line
+    .pipe(app.gulp.dest(app.path.build.images)) // and this one too, otherwise you will get an error
     .pipe(app.plugins.browserSync.stream());
 }

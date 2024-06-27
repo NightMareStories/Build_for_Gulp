@@ -1,17 +1,17 @@
 {
   "name": "build-for-gulp",
-  "version": "1.9.0",
+  "version": "2.0.0",
   "description": "This is my build for the Gulp project builder that I constantly work with, using it for my projects",
   "main": "gulpfile.js",
   "type": "module",
   "scripts": {
     "clean": "rm -rf node_modules",
     "update": "npm update --save-dev && npm update --save",
-    "dev": "gulp",
-    "build": "gulp build --build",
-    "zip": "gulp deployZIP --build",
-    "deploy": "gulp deployFTP --build",
-    "svgSprive": "gulp svgSprive"
+    "gulp_dev": "gulp",
+    "gulp_build": "gulp build --build",
+    "gulp_zip": "gulp deployZIP --build",
+    "gulp_deploy": "gulp deployFTP --build",
+    "gulp_svgSprive": "gulp svgSprive"
   },
   "repository": {
     "type": "git",

@@ -2,10 +2,10 @@ import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
 import rename from 'gulp-rename';
 
-import cleanCss from 'gulp-clean-css'; // Сжатие CSS файла
-import webpCss from 'gulp-webpcss'; // Вывод WEBP изображений
-import autoPrefixer from 'gulp-autoprefixer'; // Добавление вендорных префиксов
-import groupCssMediaQueries from 'gulp-group-css-media-queries'; // Группировка медиа запросов
+import cleanCss from 'gulp-clean-css'; // CSS file compression
+import webpCss from 'gulp-webpcss'; // Output WEBP images
+import autoPrefixer from 'gulp-autoprefixer'; // Adding vendor prefixes
+import groupCssMediaQueries from 'gulp-group-css-media-queries'; // Grouping media queries
 
 const sass = gulpSass(dartSass);
 
@@ -28,8 +28,8 @@ export const scss = () => {
     .pipe(app.plugins.if(
         app.isBuild,
         webpCss({
-            webpClass: ".webp", // Если браузер поддерживает формат webp, то добавляет класс .webp
-            noWebpClass: ".no-webp" // Если браузер не поддерживает формат webp, то добавляет класс .no-webp
+            webpClass: ".webp", // If the browser supports the webp format, it adds the .webp class
+            noWebpClass: ".no-webp" // If the browser does not support the webp format, then it adds the .no-webp class
         })
     ))
     .pipe(app.plugins.if(
@@ -44,7 +44,7 @@ export const scss = () => {
         app.isBuild,
         cleanCss()
     ))
-    .pipe(app.gulp.dest(app.path.build.css)) // Копия не сжатого файла стилей для проверки получившегося файла
+    .pipe(app.gulp.dest(app.path.build.css)) // A copy of the uncompressed styles file to test the resulting file
     .pipe(rename({
         extname: ".min.css"
     }))

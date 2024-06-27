@@ -1,7 +1,7 @@
 import fileInclude from 'gulp-file-include';
 import webpHtmlNosvg from 'gulp-webp-html-nosvg';
 import versionNumber from 'gulp-version-number';
-//import pug from 'gulp-pug'; // При работе с PUG раскомментировать эту строку кода
+//import pug from 'gulp-pug'; // When working with PUG, uncomment this line of code
 
 export const html = () => {
     return app.gulp.src(app.path.src.html)
@@ -11,11 +11,11 @@ export const html = () => {
                 message: "Error: <%= error.message %>"
             }))
         )
-        .pipe(fileInclude())    // При работе с PUG закомментировать эту строку кода
-        /* .pipe(pug({          // И раскомментировать этот блок с кодом
-            // Сжатие HTML файла
+        .pipe(fileInclude())    // When working with PUG, comment out this line of code
+        /* .pipe(pug({          // and uncomment this block with code
+            // HTML file compression
             pretty: true,
-            // Показывать в терминале какой файл обработан
+            // Show in the terminal which file has been processed
             verbose: true
          })) */
         .pipe(app.plugins.replace(/@img\//g, 'img/'))
@@ -26,16 +26,16 @@ export const html = () => {
         .pipe(app.plugins.if(
             app.isBuild,
             versionNumber({
-                'value': '%DT%',    // Выводить текущую дату и время
-                'append': {         // Вставить в конец значение
-                    'key': '_v',    // Ключ перед значением
-                    'cover': 0,     // Покрытие или замена значения нам не нужно
-                    'to': [         // Применять значение к файлам "css" и "js"
+                'value': '%DT%',    // Display current date and time
+                'append': {         // Insert value at end
+                    'key': '_v',    // Key before value
+                    'cover': 0,     // We don't need to cover or replace the value
+                    'to': [         // Apply value to "css" and "js" files
                         'css',      
                         'js',       
                     ]
                 },
-                'output': {         // Создать файл со значением текущей даты
+                'output': {         // Create a file with the current date value
                     'file': 'gulp/version.json'
                 }
             })
