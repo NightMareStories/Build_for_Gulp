@@ -1,11 +1,36 @@
+# Attention!!! This "Gulp" build in this branch uses the "old" functional approach. If you are using the "new" ES6 modular approach in your projects, then go to the "new_gulp" branch!
+&nbsp;
+# This documentation is relevant only for the "old_gulp" branch!!!
+&nbsp;
+
 # Hello!
 &nbsp;
 
 ---
-## This is my build for the Gulp project builder that I constantly work with, using it for my projects. First you need to install all the plugins from package.json using a command in your terminal.
+## This is my build for the Gulp project builder, which I constantly work with, using it for my projects.
+&nbsp;
+
+### **1. `First you need to install `"[NodeJS](https://nodejs.org/)"` on your computer. To check its presence on your PC, enter the command in the terminal:`**
 
 ```
-npm i
+node --version 
+```
+
+```
+npm --version
+```
+
+### `If the commands work and display versions, then "Node" and "NPM" are already installed;`
+### **2. `Before installing packages, you must first install "Gulp" globally on your system:`**
+
+```
+npm i --global gulp-cli
+```
+
+### `And then from the folder with "gulpfile.js" install all the plugins from "package.json" using the command in your terminal:`
+
+```
+npm i -D
 ```
 
 ### To run all possible functions of this build, enter the command in the terminal.
@@ -34,7 +59,7 @@ gulp
 &nbsp;
 
 ---
-### "Gulp" is a multifunctional program for automatically performing frequently used tasks, in other words, it is a project builder, but its functionality can be broader than this definition, and it can be used to perform various tasks. "Gulp" is very popular among developers, and thanks to its simple and intuitive configuration, even newcomers to the "IT" industry use it. "Gulp" has detailed documentation for the various modules and functions for working with it.
+### "Gulp" is a multifunctional program for automatically performing frequently used tasks; in other words, it is a project builder, but its functionality can be broader than this definition, and it can be used to perform various operations. "Gulp" is very popular among developers, and thanks to its simple and straightforward configuration, even newcomers to the "IT" industry can work with it. "Gulp" has detailed documentation for the various modules and functions for working with it.
 
 ### I put together my "Gulp" build from various modules and functions aimed at front-end development. It contains: minimizing and optimizing "js" files, converting the work of the "Sass" and "SCSS" preprocessor to the usual "CSS" format, compressing and converting images, working with fonts, modular division of "HTML" files into components, and also, adding "CSS" prefixes, working with "SVG" images, converting "js" files to older versions for compatibility, collecting all script files into one and other useful functions
 

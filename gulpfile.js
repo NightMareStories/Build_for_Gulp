@@ -1,5 +1,5 @@
-let project_folder = require('path').basename(__dirname); // Папка готового проекта
-let source_folder = '#src'; // Папка источников
+let project_folder = require('path').basename(__dirname); // Finished project folder
+let source_folder = '#src'; // Sources folder
 
 let fs = require('fs');
 
@@ -13,15 +13,15 @@ let path = {
     },
     src: {
         html: [source_folder + '/*.html', '!' + source_folder + '/_*.html'],
-        css: [source_folder + '/scss/style.scss'],
-        js: [source_folder + '/js/**/*.js', source_folder + '/Class/Cart.js'],
+        css: [[source_folder + '/scss/style.scss'], [source_folder + '/used_apps/**/*.css']],
+        js: [source_folder + '/js/script.js', source_folder + '/used_apps/app.js'],
         img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}',
-        fonts: [source_folder + '/fonts/*.ttf', source_folder + '/fonts/*.woff',source_folder + '/fonts/*.woff2' ]
+        fonts: source_folder + '/fonts/*.ttf'
     },
     watch: {
         html: source_folder + '/**/*.html',
         css: source_folder + '/scss/**/*.scss',
-        js: [source_folder + '/js/**/*.js', source_folder + '/Class/Cart.js'],
+        js: source_folder + '/js/**/*.js',
         img: source_folder + '/img/**/*.{jpg,png,svg,gif,ico,webp}'
     },
     clean: './' + project_folder + '/'
@@ -32,7 +32,7 @@ let { src, dest } = require('gulp'),
     browsersync = require('browser-sync').create(),
     fileinclude = require('gulp-file-include'),
     del = require('del'),
-    scss = require('gulp-sass'),
+    scss = require('gulp-sass')(require('sass')),
     autoprefixer = require('gulp-autoprefixer'),
     group_media = require('gulp-group-css-media-queries'),
     clean_css = require('gulp-clean-css'),
@@ -64,7 +64,7 @@ function html() {
         .pipe(browsersync.stream())
 }
 function css() {
-    return src(path.src.css)
+    return src(path.src.css[0])
         .pipe(scss({
             outputStyle: 'expanded'
         }))
@@ -76,6 +76,8 @@ function css() {
         .pipe(group_media())
         .pipe(dest(path.build.css))
 
+        .pipe(src(path.src.css[1]))
+        .pipe(dest(path.build.css))
         .pipe(clean_css())
         .pipe(rename({
             extname: '.min.css'
@@ -169,7 +171,7 @@ function cb() {
 function watchFiles(params) {
     gulp.watch([path.watch.html], html);
     gulp.watch([path.watch.css], css);
-    gulp.watch(path.watch.js, js);
+    gulp.watch([path.watch.js], js);
     gulp.watch([path.watch.img], images);
 }
 
