@@ -1,6 +1,6 @@
 {
-  "name": "build-for-gulp",
-  "version": "1.1.0",
+  "name": "build_for_gulp",
+  "version": "1.1.1",
   "description": "This is my build for the Gulp project builder that I constantly work with, using it for my projects",
   "main": "gulpfile.js",
   "type": "commonjs",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NightMareStories/Build-for-Gulp.git"
+    "url": "git+https://github.com/NightMareStories/Build_for_Gulp.git"
   },
   "keywords": [
     "Build",
@@ -27,9 +27,9 @@
   "author": "NightMareStories",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NightMareStories/Build-for-Gulp/issues"
+    "url": "https://github.com/NightMareStories/Build_for_Gulp/issues"
   },
-  "homepage": "https://github.com/NightMareStories/Build-for-Gulp#readme",
+  "homepage": "https://github.com/NightMareStories/Build_for_Gulp#readme",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
