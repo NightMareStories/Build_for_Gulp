@@ -57,6 +57,28 @@ npm run gulp_build
 ```
 
 ### It will process your files and place them in the "dist" folder, where you can take them and use them in your project.
+
+## Important information regarding file paths!
+
+### With a component approach, you need to take into account that the paths will change during build and for this, you must immediately specify the path to the file in the production folder. To avoid manually specifying paths to connected files (images), you can use the "Path Autocomplete" plugin (for VS Code), it allows you to specify path aliases to the production folder in one file and use them in future development. After installing the plugin, you need to go to the "Open Settings (JSON)" file (in the search line, by default "F1") and write these lines at the very bottom:
+
+```
+"path-autocomplete.pathMappings": {
+    "@img": "${folder}/src/img", // alias for images
+    "@scss": "${folder}/src/scss", // alias for scss
+    "@js": "${folder}/src/js" // alias for js
+}
+```
+
+### Now if you need to specify paths to files, then simply write: "@img/name.png".
+
+### But now during build, the paths will be specified as "@img", which in turn will not be recognized by browsers. To fix this, you can use the "gulp-replace" plugin. It allows you to rewrite the path string of the finished version of the file before placing it in the production folder. Here is an example using this plugin using regular expressions:
+
+```
+.pipe(app.plugins.replace(/@img\//g, 'img/'))
+```
+
+### Runs and searches for the line "/@img\//g" and replaces this line with the new "img/";
 ---
 &nbsp;
 

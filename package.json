@@ -1,6 +1,6 @@
 {
-  "name": "build-for-gulp",
-  "version": "2.0.0",
+  "name": "build_for_gulp",
+  "version": "2.0.1",
   "description": "This is my build for the Gulp project builder that I constantly work with, using it for my projects",
   "main": "gulpfile.js",
   "type": "module",
@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/NightMareStories/Build-for-Gulp.git"
+    "url": "git+https://github.com/NightMareStories/Build_for_Gulp.git"
   },
   "keywords": [
     "Build",
@@ -32,9 +32,9 @@
   "author": "NightMareStories",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/NightMareStories/Build-for-Gulp/issues"
+    "url": "https://github.com/NightMareStories/Build_for_Gulp/issues"
   },
-  "homepage": "https://github.com/NightMareStories/Build-for-Gulp#readme",
+  "homepage": "https://github.com/NightMareStories/Build_for_Gulp#readme",
   "devDependencies": {
     "browser-sync": "^3.0.2",
     "del": "^7.1.0",
