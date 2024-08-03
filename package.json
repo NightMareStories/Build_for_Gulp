@@ -1,6 +1,6 @@
 {
   "name": "build_for_gulp",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "This is my build for the Gulp project builder that I constantly work with, using it for my projects",
   "main": "gulpfile.js",
   "type": "module",
